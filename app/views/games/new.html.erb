@@ -2,7 +2,15 @@
 
 <h2>Here is your grid:</h2>
 
-<p><%= @letters%></p>
+
+<ul>
+  <%  @my_grid.each do | letter | %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+
+
 
 
 <form action="/score" method="post">
@@ -12,3 +20,5 @@
   <input type="hidden"  name="startime"  value="<%= @start_time %>">
   <input type="submit">
 </form>
+
+<!-- <p id="myletters"><%= @letters%></p> -->

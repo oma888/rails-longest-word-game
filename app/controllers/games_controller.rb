@@ -2,7 +2,6 @@ require 'open-uri'
 require 'json'
 
 class GamesController < ApplicationController
-
   def new
     @my_grid = generate_grid(10)
     @letters = ''
@@ -16,8 +15,6 @@ class GamesController < ApplicationController
     @response = params[:myword]
     @my_grid = params[:mygrid].split('')
     @start_time = params[:startime].to_i
-
-    # raise
     @end_time = Time.now.to_i
     @time = @end_time - @start_time
     @dico_result = run_game(@response, @my_grid, @start_time, @end_time)
